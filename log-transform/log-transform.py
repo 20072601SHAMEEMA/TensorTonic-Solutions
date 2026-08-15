@@ -1,6 +1,5 @@
 import math
 def log_transform(values):
-    
     """
     Apply the log1p transformation to each value.
     """
