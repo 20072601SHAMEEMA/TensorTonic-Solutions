@@ -1,15 +1,14 @@
 import numpy as np
 
-def zscore_standardize(X, axis=0, eps=1e-12):
+def zscore_standardize(X: list, axis: int = 0, eps: float = 1e-12) -> np.ndarray:
     """
-    Standardize X: (X - mean)/std. If 2D and axis=0, per column.
-    Return np.ndarray (float).
+    Returns population Z-scores as a NumPy array matching the shape of X.
     """
     # Write code here
-    mean=np.mean(X,axis=axis,keepdims=True)
-    std=np.std(X,axis=axis,keepdims=True)
-    return (X-mean)/(std+eps)
-
-
-
+    arr=np.array(X,dtype=float)
+    mean=np.mean(arr,axis=axis,keepdims=True)
+    std=np.std(arr,axis=axis,keepdims=True)
+    safe_std=np.where(std>eps,std,1.0)
+    z_score=(arr-mean)/safe_std
+    return z_score
     pass
