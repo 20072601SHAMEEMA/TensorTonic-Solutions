@@ -17,11 +17,13 @@ $$
 where:
 
 **Residual Sum of Squares (unexplained variance):**
+
 $$
 SS_{\text{res}} = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 $$
 
 **Total Sum of Squares (total variance):**
+
 $$
 SS_{\text{tot}} = \sum_{i=1}^{n} (y_i - \bar{y})^2
 $$
@@ -146,11 +148,13 @@ Adjusted $R^2$ decreases if a new feature does not improve the model enough to j
 ## R-squared vs. MSE/RMSE
 
 **MSE (Mean Squared Error):**
+
 $$
 \text{MSE} = \frac{1}{n} \sum_i (y_i - \hat{y}_i)^2 = \frac{SS_{\text{res}}}{n}
 $$
 
 **Relationship:**
+
 $$
 R^2 = 1 - \frac{n \times \text{MSE}}{SS_{\text{tot}}}
 $$
