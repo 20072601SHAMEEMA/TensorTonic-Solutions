@@ -2,10 +2,12 @@ import numpy as np
 
 def sigmoid(x: list | float) -> np.ndarray | float:
     """
-    Vectorized sigmoid function.
+    Returns the sigmoid value for a scalar or each element of a list.
     """
     # Write code here
-    x=np.asarray(x,dtype=float)
-    sig=1/(1+np.exp(-x))
-    return float(sig) if sig.ndim==0 else sig
+    arr=np.array(x,dtype=float)
+    result=1.0/(1.0+np.exp(-arr))
+    if result.ndim==0:
+        return float(result)
+    return result    
     pass
