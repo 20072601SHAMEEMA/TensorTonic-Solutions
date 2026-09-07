@@ -1,7 +1,9 @@
 import math
-def log_transform(values):
+
+def log_transform(values: list) -> list:
     """
-    Apply the log1p transformation to each value.
+    Returns the log1p-transformed values rounded to four decimals.
     """
     # Write code here
-    return [math.log1p(v) for v in values]
+    return [round(math.log1p(x),4)for x in values]
+    pass
